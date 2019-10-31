@@ -4,6 +4,10 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
+body {
+  background-color: #f5f5f6;
+}
+
 .jumbotron {
   background-color: #2d2b55;
   padding-top: 8em;
@@ -19,7 +23,7 @@ h1 {
   line-height: 1.30;
 }
 
-.lead {
+header .lead {
   color: #e1e2e1;
 }
 

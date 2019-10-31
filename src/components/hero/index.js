@@ -16,7 +16,7 @@ import './style.css';
 export default class Hero extends Component {
 	render() {
 		return (
-			<section>
+			<header>
 				<Jumbotron fluid>
 					<Container>
 						<Row>
@@ -34,7 +34,7 @@ export default class Hero extends Component {
 				</Jumbotron>
 				{/* Hero Wave - An SVG Image to create Wave Effect */}
 				<HeroWave />
-			</section>
+			</header>
 		);
 	}
 }

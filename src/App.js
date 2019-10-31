@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import Navbar from './components/navbar';
 import Hero from './components/hero';
+import About from './components/about';
 
 export default class App extends Component {
   render() {
     return (
-      <main style={{ backgroundColor: '#f5f5f6' }}>
+      <main>
         <Navbar />
         <Hero />
+        <About />
       </main >
     );
   }
