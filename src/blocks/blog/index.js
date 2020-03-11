@@ -1,54 +1,49 @@
-import React, { lazy, useState, useEffect, memo } from "react";
-import { Container, Row } from "react-bootstrap";
+import React, { useState, useEffect, memo } from "react";
+import Section from "components/section";
+import Wrapper from "./blog-wrapper";
+import Article from "./blog-article";
+import NoArticle from "./blog-no-article";
+
 import axios from "axios";
 import newspaper from "assets/images/icon/newspaper.svg";
 
-const CustomSection = lazy(() => import("components/section-custom"));
-const Wrapper = lazy(() => import("./blog-wrapper"));
-const Article = lazy(() => import("./blog-article"));
-const NoArticle = lazy(() => import("./blog-no-article"));
-
-function Blog() {
+const Blog = () => {
   const [articles, setArticles] = useState([]);
-  const icon = { name: newspaper, alternative: "newspaper icon" };
+
+  const icon = {
+    name: newspaper,
+    alternative: "newspaper icon"
+  };
 
   useEffect(() => {
     axios
-      .get("https://dev.to/api/articles?username=thexdev")
-      .then(response => setArticles(response))
+      .get("https://dev.to/api/articles/?username=thexdev")
+      .then(response => setArticles(response.data))
       .catch(error => console.error(error));
-  }, [articles]);
+  }, []);
 
   return (
-    <CustomSection
-      heading="blog"
-      subheading="lorem ipsum dolor sit amet"
-      icon={icon}
-    >
-      <Container>
-        <Row>
-          {articles > 0 ? (
-            articles.map(article => (
-              <Wrapper key={article.id}>
-                <Article
-                  title={article.title}
-                  description={article.description}
-                  cover={article.cover_image}
-                  date={article.published_at}
-                  tags={article.tag_list}
-                  url={article.url}
-                />
-              </Wrapper>
-            ))
-          ) : (
-            <Wrapper grid={12}>
-              <NoArticle />
-            </Wrapper>
-          )}
-        </Row>
-      </Container>
-    </CustomSection>
+    <Section title="blog" subtitle="lorem ipsum dolor sit amet" icon={icon}>
+      {articles.length > 0 ? (
+        articles.map(article => (
+          <Wrapper key={article.id}>
+            <Article
+              title={article.title}
+              description={article.description}
+              cover={article.cover_image}
+              date={article.published_at}
+              tags={article.tag_list}
+              url={article.url}
+            />
+          </Wrapper>
+        ))
+      ) : (
+        <Wrapper grid={12}>
+          <NoArticle />
+        </Wrapper>
+      )}
+    </Section>
   );
-}
+};
 
 export default memo(Blog);
