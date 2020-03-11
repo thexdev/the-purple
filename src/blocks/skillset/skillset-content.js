@@ -6,15 +6,15 @@ const Box = lazy(() => import("components/box"));
 
 function SkillsetContent() {
   const [skills] = useState([
-    { title: "JavaScript", description: ">3 Years. Advanced" },
-    { title: "NodeJS", description: ">2 Years. Intermediate" },
-    { title: "ReactJS", description: "<1 Year. Intermediate" },
-    { title: "Python", description: ">1 Year. Intermediate" },
-    { title: "PHP", description: ">2 Years. Intermediate" },
-    { title: "Laravel", description: "<1 Year. Beginner" }
+    { title: "JavaScript", description: "> 3 Years." },
+    { title: "NodeJS", description: "> 2 Years." },
+    { title: "ReactJS", description: "< 1 Year." },
+    { title: "Python", description: "> 1 Year." },
+    { title: "PHP", description: "> 2 Years." },
+    { title: "Laravel", description: "< 1 Year." }
   ]);
 
-  const [icon] = useState({ name: processor, alternative: "processor" });
+  const icon = { name: processor, alternative: "processor" };
 
   return (
     <Col md={8}>
