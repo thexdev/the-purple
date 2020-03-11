@@ -1,8 +1,9 @@
 import React, { memo } from "react";
+import { Link } from "react-router-dom";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import "./style.css";
 
-function Navigation() {
+const Navigation = () => {
   return (
     <Navbar className="py-3" variant="dark" expand="lg" fixed="top">
       <Container>
@@ -10,29 +11,29 @@ function Navigation() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link className="mx-3" href="#home">
+            <Link to="/" className="nav-link mx-3">
               Home
-            </Nav.Link>
-            <Nav.Link className="mx-3" href="#">
+            </Link>
+            <Link to="/about" className="nav-link mx-3">
               About
-            </Nav.Link>
-            <Nav.Link className="mx-3" href="#">
+            </Link>
+            <Link to="/services" className="nav-link mx-3">
               Services
-            </Nav.Link>
-            <Nav.Link className="mx-3" href="#">
+            </Link>
+            <Link to="/portfolio" className="nav-link mx-3">
               Portfolio
-            </Nav.Link>
-            <Nav.Link className="mx-3" href="#">
+            </Link>
+            <Link to="/blog" className="nav-link mx-3">
               Blog
-            </Nav.Link>
-            <Nav.Link className="mx-3" href="#">
+            </Link>
+            <Link to="/contact" className="nav-link mx-3">
               Contact
-            </Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-}
+};
 
 export default memo(Navigation);
