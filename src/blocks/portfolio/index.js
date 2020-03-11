@@ -1,17 +1,12 @@
-import React, { useState, lazy, memo } from "react";
-import { Row, Col, Card } from "react-bootstrap";
+import React, { useState, memo } from "react";
+import { Col, Card } from "react-bootstrap";
+import Section from "components/section";
+
 import FlitToken from "assets/images/portfolio/flit-token.png";
 import Awmi from "assets/images/portfolio/awmi.png";
 import rocket from "assets/images/icon/rocket.svg";
 
-const SectionCustom = lazy(() => import("components/section-custom/"));
-
-function Portfolio() {
-  const [icon] = useState({
-    name: rocket,
-    alternative: "rocket icon"
-  });
-
+const Portfolio = () => {
   const [images] = useState([
     {
       title: "Flittoken",
@@ -29,38 +24,38 @@ function Portfolio() {
     }
   ]);
 
+  const icon = {
+    name: rocket,
+    alternative: "rocket icon"
+  };
+
   return (
-    <SectionCustom
-      heading="portfolio"
-      subheading="lorem ipsum dolor sit amet"
+    <Section
+      title="portfolio"
+      subtitle="see all things that i've done"
       icon={icon}
     >
-      <Row>
-        {images.map((image, index) => (
-          <Col xs={12} md={4} key={index}>
-            <Card className="shadow mb-3">
-              <Card.Img
-                src={image.name}
-                alt={image.alternative}
-                className="img-fluid shadow"
-              ></Card.Img>
-              <Card.Footer>
-                <span className="badge badge-pill badge-warning mr-3 px-2 border-0">
-                  {image.year}
-                </span>
-                <a
-                  href={image.url}
-                  className="text-danger text-decoration-none"
-                >
-                  {image.title}
-                </a>
-              </Card.Footer>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </SectionCustom>
+      {images.map((image, index) => (
+        <Col xs={12} md={4} key={index}>
+          <Card className="shadow mb-3">
+            <Card.Img
+              src={image.name}
+              alt={image.alternative}
+              className="img-fluid shadow"
+            ></Card.Img>
+            <Card.Footer>
+              <span className="badge badge-pill badge-warning mr-3 px-2 border-0">
+                {image.year}
+              </span>
+              <a href={image.url} className="text-danger text-decoration-none">
+                {image.title}
+              </a>
+            </Card.Footer>
+          </Card>
+        </Col>
+      ))}
+    </Section>
   );
-}
+};
 
 export default memo(Portfolio);
