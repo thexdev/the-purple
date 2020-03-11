@@ -1,9 +1,9 @@
-import React, {memo} from 'react';
+import React, { memo } from "react";
 import { Col } from "react-bootstrap";
 
 function BlogWrapper(props) {
-  return (  
-    <Col xs={12} md={props.grid}>
+  return (
+    <Col xs={12} md={props.grid} className="mb-3">
       {props.children}
     </Col>
   );
