@@ -67,7 +67,12 @@ const MessageForm = () => {
       <h3 className="mb-5 d-none d-md-block text-center text-md-left">
         Fill the fields and <br /> send me your love message
       </h3>
-      <Form name="message" netlify="true" onSubmit={handleSubmit}>
+      <Form
+        name="message"
+        netlify="true"
+        data-netlify="true"
+        onSubmit={handleSubmit}
+      >
         <input type="hidden" name="form-name" value="message" />
         <Form.Group className="mb-3">
           <Form.Control
