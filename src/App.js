@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, memo } from "react";
+import "./App.css";
 import { Switch, Route } from "react-router-dom";
 
 const Home = lazy(() => import("pages/home"));
