@@ -69,8 +69,8 @@ const MessageForm = () => {
       </h3>
       <Form
         name="message"
-        netlify="true"
         data-netlify="true"
+        data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="message" />
