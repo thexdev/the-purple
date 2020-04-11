@@ -47,7 +47,7 @@ const MessageForm = () => {
       dangerMode: true,
     };
 
-    axios("https://thexdev.netlify.com/", {
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: FormHelper.urlencoded({ "form-name": "message", ...formMessage }),
