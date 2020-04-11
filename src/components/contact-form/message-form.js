@@ -1,5 +1,4 @@
 import React, { useState, memo } from "react";
-import axios from "axios";
 import swal from "@sweetalert/with-react";
 import { Col, Form, FormControl, Button } from "react-bootstrap";
 
