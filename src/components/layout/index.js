@@ -1,21 +1,21 @@
-import React, { lazy, memo } from "react";
+import React, { memo } from "react";
 
-const Navigation = lazy(() => import("components/navigation"));
-const SocialMediaFloatBtn = lazy(() =>
-  import("components/social-media-float-btn")
-);
-const SocialMediaFloatBtnMobile = lazy(() =>
-  import("components/social-media-float-btn/mobile")
-);
+import Footer from "components/footer";
+import Navigation from "components/navigation";
+import SocialMediaFloatBtn from "components/social-media-float-btn";
+import SocialMediaFloatBtnMobile from "components/social-media-float-btn/mobile";
 
 const MainLayout = (props) => {
   return (
-    <main>
-      <Navigation />
-      <SocialMediaFloatBtn />
-      <SocialMediaFloatBtnMobile />
-      {props.children}
-    </main>
+    <>
+      <main>
+        <Navigation />
+        <SocialMediaFloatBtn />
+        <SocialMediaFloatBtnMobile />
+        {props.children}
+      </main>
+      <Footer />
+    </>
   );
 };
 
