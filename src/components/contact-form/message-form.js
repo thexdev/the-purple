@@ -9,7 +9,7 @@ const MessageForm = () => {
   const [formMessage, setFormMessage] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
 
   const handleFailedToSentMessage = () => {
@@ -27,36 +27,36 @@ const MessageForm = () => {
           </span>
         </div>
       ),
-      icon: "info"
+      icon: "info",
     });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     let successAlert = {
       title: "Good job!",
       text: "Thanks, I will read your message soon!",
-      icon: "success"
+      icon: "success",
     };
 
     let failedAlert = {
       title: "Aw, snap!",
       text: "Something was wrong, but i can't handle it right now :(",
       icon: "error",
-      dangerMode: true
+      dangerMode: true,
     };
 
     axios("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: FormHelper.urlencoded({ "form-name": "message", ...formMessage })
+      body: FormHelper.urlencoded({ "form-name": "message", ...formMessage }),
     })
       .then(() => swal(successAlert))
       .catch(() => swal(failedAlert).then(handleFailedToSentMessage));
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setFormMessage(
       Object.assign(formMessage, { [e.target.name]: e.target.value })
     );
@@ -64,7 +64,7 @@ const MessageForm = () => {
 
   return (
     <Col xs={12} md={7}>
-      <h3 className="mb-5 text-center text-md-left">
+      <h3 className="mb-5 d-none d-md-block text-center text-md-left">
         Fill the fields and <br /> send me your love message
       </h3>
       <Form name="message" onSubmit={handleSubmit}>
