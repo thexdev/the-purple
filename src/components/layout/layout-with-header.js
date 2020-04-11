@@ -1,10 +1,14 @@
-import React, { lazy, memo } from "react";
+import React, { memo, useEffect } from "react";
+import Navigation from "components/navigation";
 import { Jumbotron } from "react-bootstrap";
 
-const Navigation = lazy(() => import("components/navigation"));
-
 const LayoutWithHeader = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const style = { backgroundColor: "#2d2b55" };
+
   return (
     <main>
       <Navigation />
