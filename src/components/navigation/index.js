@@ -5,9 +5,11 @@ import "./style.css";
 
 const Navigation = () => {
   return (
-    <Navbar className="py-3" variant="dark" expand="lg" fixed="top">
+    <Navbar className="py-3" variant="dark" expand="lg" sticky="top">
       <Container>
-        <Navbar.Brand href="/">thexdev</Navbar.Brand>
+        <Link to="/" className="navbar-brand">
+          thexdev
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
