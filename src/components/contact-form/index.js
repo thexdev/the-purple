@@ -1,18 +1,22 @@
-import React, { memo } from "react";
-import Section from "components/section";
-import MessageForm from "./message-form";
-import Illustration from "./illustration";
+import React, { memo } from 'react';
+import Section from 'components/section';
+import MessageForm from './message-form';
+import Illustration from './illustration';
 
-import message from "assets/images/icon/message.svg";
+import message from 'assets/images/icon/message.svg';
+
+const icon = {
+  name: message,
+  alternative: 'message icon',
+};
 
 const ContactForm = () => {
-  const icon = {
-    name: message,
-    alternative: "message icon"
-  };
-
   return (
-    <Section title="contact" subtitle="lorem ipsum dolor sit amet" icon={icon}>
+    <Section
+      title="contact"
+      subtitle="text me with just a single click"
+      icon={icon}
+    >
       <MessageForm />
       <Illustration />
     </Section>
