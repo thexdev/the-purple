@@ -1,8 +1,9 @@
-import React, { lazy, memo } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import React, { lazy, memo } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const SkillsetImage = lazy(() => import("./skillset-image"));
-const SkillsetContent = lazy(() => import("./skillset-content"));
+const SkillsetImage = lazy(() => import('./skillset-image'));
+const SkillsetContent = lazy(() => import('./skillset-content'));
 
 function Skillset() {
   return (
@@ -11,13 +12,10 @@ function Skillset() {
         <Row>
           <SkillsetImage />
           <SkillsetContent />
-          <Col xs={12}>
-            <Button
-              variant="danger"
-              className="mx-auto d-block mt-3 rounded-pill"
-            >
+          <Col xs={12} className="text-center">
+            <Link to="/about" className="btn btn-danger mt-3 rounded-pill">
               Show More
-            </Button>
+            </Link>
           </Col>
         </Row>
       </Container>
