@@ -1,24 +1,24 @@
-import React, { useState, useEffect, memo } from "react";
-import { Col } from "react-bootstrap";
-import Section from "components/section";
-import GithubBox from "components/github-box";
+import React, { useState, useEffect, memo } from 'react';
+import { Col } from 'react-bootstrap';
+import Section from 'components/section';
+import GithubBox from 'components/github-box';
 
-import axios from "axios";
-import StrHelper from "helpers/string";
-import doc from "assets/images/icon/doc.svg";
+import axios from 'axios';
+import StrHelper from 'utils/string';
+import doc from 'assets/images/icon/doc.svg';
+
+const icon = {
+  name: doc,
+  alternative: 'document icon',
+};
 
 const Github = () => {
   const [repos, setRepos] = useState([]);
 
-  const icon = {
-    name: doc,
-    alternative: "document icon"
-  };
-
   useEffect(() => {
     axios
-      .get("https://api.github.com/users/thexdev/repos")
-      .then(response => setRepos(response.data))
+      .get('https://api.github.com/users/thexdev/repos')
+      .then((response) => setRepos(response.data))
       .catch(console.error);
   }, []);
 
@@ -28,16 +28,16 @@ const Github = () => {
       subtitle="i'm an open source person, fork it all"
       icon={icon}
     >
-      {repos.map(repo => (
+      {repos.map((repo) => (
         <Col key={repo.id} xs={12} md={3}>
           <GithubBox
             image={{
               name: repo.owner.avatar_url,
-              aleternative: "M. Akbar Nugroho"
+              aleternative: 'M. Akbar Nugroho',
             }}
             content={{
               title: StrHelper.stripHypens(repo.name),
-              description: repo.description
+              description: repo.description,
             }}
           />
         </Col>

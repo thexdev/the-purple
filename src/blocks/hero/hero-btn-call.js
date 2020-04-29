@@ -1,17 +1,14 @@
-import React, { useState, memo } from "react";
-import { Button } from "react-bootstrap";
+import React, { memo } from 'react';
 
-function HeroBtnCall() {
-  const [text, setText] = useState("Yes, click here!");
+const HeroBtnCall = () => {
   return (
-    <Button
-      className="rounded-pill shadow d-none d-md-inline"
-      size="lg"
-      onClick={() => setText("Uh, Awesome ❤️")}
+    <a
+      href="https://www.linkedin.com/in/thexdev/"
+      className="btn btn-danger btn-lg rounded-pill shadow d-none d-md-inline-block"
     >
-      {text}
-    </Button>
+      Yes, click here!
+    </a>
   );
-}
+};
 
 export default memo(HeroBtnCall);

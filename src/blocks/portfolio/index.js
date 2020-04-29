@@ -1,33 +1,33 @@
-import React, { useState, memo } from "react";
-import { Col, Card } from "react-bootstrap";
-import Section from "components/section";
+import React, { useState, memo } from 'react';
+import { Col, Card } from 'react-bootstrap';
+import Section from 'components/section';
 
-import FlitToken from "assets/images/portfolio/flit-token.png";
-import Awmi from "assets/images/portfolio/awmi.png";
-import rocket from "assets/images/icon/rocket.svg";
+import FlitToken from 'assets/images/portfolio/flit-token.png';
+import Awmi from 'assets/images/portfolio/awmi.png';
+import rocket from 'assets/images/icon/rocket.svg';
+
+const icon = {
+  name: rocket,
+  alternative: 'rocket icon',
+};
 
 const Portfolio = () => {
   const [images] = useState([
     {
-      title: "Flittoken",
+      title: 'Flittoken',
       name: FlitToken,
       year: 2019,
-      alternative: "Flit token",
-      url: "https://flittoken.com"
+      alternative: 'Flit token',
+      url: 'https://flittoken.com',
     },
     {
-      title: "AWMI",
+      title: 'AWMI',
       name: Awmi,
       year: 2019,
-      alternative: "Asosiasi Wisata Medis Indonesia",
-      url: "https://awmi.co.id"
-    }
+      alternative: 'Asosiasi Wisata Medis Indonesia',
+      url: 'https://awmi.co.id',
+    },
   ]);
-
-  const icon = {
-    name: rocket,
-    alternative: "rocket icon"
-  };
 
   return (
     <Section

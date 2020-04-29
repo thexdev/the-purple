@@ -1,6 +1,6 @@
-import React, { memo } from "react";
-import Emoji from "components/emoji";
-import ReactLogo from "assets/images/logo/react.svg";
+import React, { memo } from 'react';
+import Emoji from 'components/emoji';
+import ReactLogo from 'assets/images/logo/react.svg';
 
 const MadeWithReact = () => {
   return (
@@ -12,8 +12,8 @@ const MadeWithReact = () => {
         width="100"
         height="100"
       />
-      <p className="text-md-center text-secondary">
-        made with <Emoji label="love" symbol="❤️" /> +{" "}
+      <p className="d-none d-md-block text-md-center text-secondary">
+        made with <Emoji label="love" symbol="❤️" /> +{' '}
         <span className="text-info">React.js</span>
       </p>
     </>

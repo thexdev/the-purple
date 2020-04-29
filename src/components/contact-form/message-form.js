@@ -1,19 +1,19 @@
-import React, { useState, memo } from "react";
-import swal from "@sweetalert/with-react";
-import { Col, Form, FormControl, Button } from "react-bootstrap";
+import React, { useState, memo } from 'react';
+import swal from '@sweetalert/with-react';
+import { Col, Form, FormControl, Button } from 'react-bootstrap';
 
-import FormHelper from "helpers/form";
+import FormHelper from 'utils/form';
 
 const MessageForm = () => {
   const [formMessage, setFormMessage] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
 
   const handleFailedToSentMessage = () => {
     swal({
-      title: "Good news!",
+      title: 'Good news!',
       content: (
         <div>
           <p>You can send the message to:</p>
@@ -26,7 +26,7 @@ const MessageForm = () => {
           </span>
         </div>
       ),
-      icon: "info",
+      icon: 'info',
     });
   };
 
@@ -34,31 +34,29 @@ const MessageForm = () => {
     e.preventDefault();
 
     let successAlert = {
-      title: "Good job!",
-      text: "Thanks, I will read your message soon!",
-      icon: "success",
+      title: 'Good job!',
+      text: 'Thanks, I will read your message soon!',
+      icon: 'success',
     };
 
     let failedAlert = {
-      title: "Aw, snap!",
+      title: 'Aw, snap!',
       text: "Something was wrong, but i can't handle it right now :(",
-      icon: "error",
+      icon: 'error',
       dangerMode: true,
     };
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: FormHelper.urlencoded({ "form-name": "message", ...formMessage }),
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: FormHelper.urlencoded({ 'form-name': 'message', ...formMessage }),
     })
-      .then(() => swal(successAlert))
-      .catch(() => swal(failedAlert).then(handleFailedToSentMessage));
+      .catch(() => swal(failedAlert).then(handleFailedToSentMessage))
+      .then(() => swal(successAlert));
   };
 
   const handleChange = (e) => {
-    setFormMessage(
-      Object.assign(formMessage, { [e.target.name]: e.target.value })
-    );
+    setFormMessage({ ...formMessage, [e.target.name]: e.target.value });
   };
 
   return (
@@ -80,6 +78,7 @@ const MessageForm = () => {
             name="name"
             placeholder="Your name"
             onChange={handleChange}
+            disabled
           />
         </Form.Group>
         <Form.Group className="mb-3">
@@ -89,6 +88,7 @@ const MessageForm = () => {
             name="email"
             placeholder="Your email"
             onChange={handleChange}
+            disabled
           />
         </Form.Group>
         <Form.Group className="mb-3">
@@ -96,13 +96,18 @@ const MessageForm = () => {
             size="lg"
             as="textarea"
             name="message"
-            placeholder="Your love message"
+            placeholder="Ups, sorry. This feature is under maintenance. You can text me directly from here akbarnugroho253@gmail.com. Have a nice day!"
             rows={6}
             onChange={handleChange}
+            disabled
           />
         </Form.Group>
         <Form.Group className="text-center text-md-left">
-          <Button type="submit" className="rounded-pill btn-danger btn-lg">
+          <Button
+            type="submit"
+            className="rounded-pill btn-danger btn-lg"
+            disabled
+          >
             Send message
           </Button>
         </Form.Group>

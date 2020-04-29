@@ -1,13 +1,14 @@
-import React, { memo, useEffect } from "react";
-import Navigation from "components/navigation";
-import { Jumbotron } from "react-bootstrap";
+import React, { memo, useEffect } from 'react';
+import Footer from 'components/footer';
+import Navigation from 'components/navigation';
+import { Jumbotron } from 'react-bootstrap';
+
+const style = { backgroundColor: '#2d2b55' };
 
 const LayoutWithHeader = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const style = { backgroundColor: "#2d2b55" };
 
   return (
     <main>
@@ -27,7 +28,8 @@ const LayoutWithHeader = (props) => {
           </svg>
         </Jumbotron>
       </header>
-      <section style={{ backgroundColor: "#f5f5f6" }}>{props.children}</section>
+      <section style={{ backgroundColor: '#f5f5f6' }}>{props.children}</section>
+      <Footer />
     </main>
   );
 };
