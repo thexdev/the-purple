@@ -1,7 +1,7 @@
-import React, { lazy, memo } from "react";
+import React, { lazy, memo } from 'react';
 
-const Emoji = lazy(() => import("components/emoji"));
-const HeroBtnCall = lazy(() => import("./hero-btn-call"));
+const Emoji = lazy(() => import('components/emoji'));
+const HeroBtnCall = lazy(() => import('./hero-btn-call'));
 
 const HeroText = () => {
   return (
