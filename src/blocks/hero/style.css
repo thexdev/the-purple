@@ -22,7 +22,7 @@ header .lead {
   color: #e1e2e1;
 }
 
-.btn {
+.jumbotron .btn {
   animation: pulse 1.5s infinite;
 }
 
