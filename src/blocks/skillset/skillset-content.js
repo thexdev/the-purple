@@ -1,20 +1,20 @@
-import React, { lazy, useState, memo } from "react";
-import { Row, Col } from "react-bootstrap";
-import processor from "assets/images/icon/processor.svg";
+import React, { lazy, useState, memo } from 'react';
+import { Row, Col } from 'react-bootstrap';
+import processor from 'assets/images/icon/processor.svg';
 
-const Box = lazy(() => import("components/box"));
+const Box = lazy(() => import('components/box'));
 
 function SkillsetContent() {
   const [skills] = useState([
-    { title: "JavaScript", description: "> 3 Years." },
-    { title: "NodeJS", description: "> 2 Years." },
-    { title: "ReactJS", description: "< 1 Year." },
-    { title: "Python", description: "> 1 Year." },
-    { title: "PHP", description: "> 2 Years." },
-    { title: "Laravel", description: "< 1 Year." }
+    { title: 'JavaScript', description: '> 2 Years.' },
+    { title: 'NodeJS', description: '> 2 Years.' },
+    { title: 'ReactJS', description: '< 1 Year.' },
+    { title: 'Python', description: '> 1 Year.' },
+    { title: 'PHP', description: '> 2 Years.' },
+    { title: 'Laravel', description: '< 1 Year.' },
   ]);
 
-  const icon = { name: processor, alternative: "processor" };
+  const icon = { name: processor, alternative: 'processor' };
 
   return (
     <Col md={8}>
