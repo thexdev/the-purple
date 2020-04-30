@@ -20,14 +20,12 @@ const About = () => {
         <Col xs={12} md={4}>
           <p className="text-left">
             So, I'm currently working as a web developer on{' '}
-            <a href="https://rnj.id" target="_blank" rel="noopener noreferrer">
-              JnR Indonesia
-            </a>
-            . This is my first year as a web developer on real world.
+            <strong>PT Hayuning Indo Tech</strong>. This is my first year as a
+            web developer on real world.
           </p>
           <p className="text-left">
-            I really interested with latest technology specially on Hybrid App
-            and Blockchain. I'm a fast learner, good attitude and easy going.
+            I really interested with latest technology specially on JavaScript
+            and Python. I'm a fast learner, good attitude and easy going.
           </p>
         </Col>
         <Col xs={12} md={4}>
