@@ -1,8 +1,8 @@
-import React, { memo } from "react";
-import { Col } from "react-bootstrap";
-import skillset from "assets/images/about/skillset.svg";
+import React, { memo } from 'react';
+import { Col } from 'react-bootstrap';
+import skillset from 'assets/images/about/skillset.svg';
 
-function SkillsetImage() {
+const SkillsetImage = () => {
   return (
     <Col md={4}>
       <h3 className="text-uppercase text-center">Tech Stack</h3>
@@ -13,6 +13,6 @@ function SkillsetImage() {
       />
     </Col>
   );
-}
+};
 
 export default memo(SkillsetImage);
