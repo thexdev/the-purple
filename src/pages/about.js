@@ -1,17 +1,28 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
+import Box from 'components/box';
 import LayoutWithHeader from 'components/layout/layout-with-header';
 import SectionWithNoHeader from 'components/section/with-no-header';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 
 import photo1 from 'assets/images/photo/photo-1.jpg';
+import processor from 'assets/images/icon/processor.svg';
 
 const style = {
   filter: 'grayscale(80%)',
 };
 
+const icon = { name: processor, alternative: 'processor' };
+
 const About = () => {
+  const [tools] = useState([
+    { title: 'adonisjs', description: 'To create fast Restful API' },
+    { title: 'reactjs', description: 'To create user interface' },
+    { title: 'django', description: 'Handle large traffic web' },
+    { title: 'Laravel', description: 'To create common website' },
+  ]);
+
   return (
-    <LayoutWithHeader title="About" subtitle="let's get to know me closer">
+    <LayoutWithHeader title="About" subtitle="">
       <SectionWithNoHeader>
         <Container className="mb-5">
           <Row>
@@ -77,8 +88,8 @@ const About = () => {
         <Container className="mb-5">
           <Row>
             <Col md={12}>
-              <h2 className="mb-5">
-                How i <span className="text-danger">build</span> my project?
+              <h2 className="mb-5 text-center">
+                How I <span className="text-danger">handle</span> a project?
               </h2>
             </Col>
             <Col md={4}>
@@ -96,11 +107,8 @@ const About = () => {
                 </Card.Header>
                 <Card.Body className="text-secondary">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quos nesciunt eveniet accusamus dolorum fugit eaque
-                    eligendi, quae laborum ipsam assumenda laudantium animi?
-                    Magni necessitatibus voluptate fugiat beatae eos tenetur
-                    veniam?
+                    Define the problem, cut it into small parts, and make a
+                    timeline for each part.
                   </p>
                 </Card.Body>
               </Card>
@@ -115,15 +123,13 @@ const About = () => {
                         <small>nd</small>
                       </sup>
                     </strong>
+                    Code
                   </h3>
                 </Card.Header>
                 <Card.Body className="text-secondary">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quos nesciunt eveniet accusamus dolorum fugit eaque
-                    eligendi, quae laborum ipsam assumenda laudantium animi?
-                    Magni necessitatibus voluptate fugiat beatae eos tenetur
-                    veniam?
+                    Choose the suitable tools and technology then, write
+                    effective and efficient code.
                   </p>
                 </Card.Body>
               </Card>
@@ -138,18 +144,44 @@ const About = () => {
                         <small>rd</small>
                       </sup>
                     </strong>
+                    Deploy
                   </h3>
                 </Card.Header>
                 <Card.Body className="text-secondary">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quos nesciunt eveniet accusamus dolorum fugit eaque
-                    eligendi, quae laborum ipsam assumenda laudantium animi?
-                    Magni necessitatibus voluptate fugiat beatae eos tenetur
-                    veniam?
+                    Write the test and setup a pipeline. Push it to master
+                    branch and enjoy the process.
                   </p>
                 </Card.Body>
               </Card>
+            </Col>
+          </Row>
+        </Container>
+      </SectionWithNoHeader>
+      <SectionWithNoHeader>
+        <Container className="mb-5">
+          <Row>
+            <Col xs={12}>
+              <h2 className="mb-5 text-center">
+                What <span className="text-danger">tools</span> that I usually
+                use?
+              </h2>
+            </Col>
+            {tools.map((tool, index) => (
+              <Col xs={12} md={3} key={index}>
+                <Box icon={icon} content={tool} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </SectionWithNoHeader>
+      <SectionWithNoHeader>
+        <Container className="mb-5">
+          <Row>
+            <Col xs={12}>
+              <h2 className="mb-5 text-center">
+                Where I <span className="text-danger">host</span> the project?
+              </h2>
             </Col>
           </Row>
         </Container>
