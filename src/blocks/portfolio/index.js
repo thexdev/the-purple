@@ -4,7 +4,7 @@ import Section from 'components/section';
 
 import FlitToken from 'assets/images/portfolio/flit-token.png';
 import Awmi from 'assets/images/portfolio/awmi.png';
-import lppkpei from 'assets/iamges/lppkpei.png';
+import lppkpei from 'assets/iamges/portfolio/lppkpei.png';
 import rocket from 'assets/images/icon/rocket.svg';
 
 const icon = {
