@@ -4,6 +4,7 @@ import Section from 'components/section';
 
 import FlitToken from 'assets/images/portfolio/flit-token.png';
 import Awmi from 'assets/images/portfolio/awmi.png';
+import lppkpei from 'assets/iamges/lppkpei.png';
 import rocket from 'assets/images/icon/rocket.svg';
 
 const icon = {
@@ -26,6 +27,14 @@ const Portfolio = () => {
       year: 2019,
       alternative: 'Asosiasi Wisata Medis Indonesia',
       url: 'https://awmi.co.id',
+    },
+    {
+      title: 'LPPKPEI',
+      name: lppkpei,
+      year: 2019,
+      alternative:
+        'Lembaga Pendidikan dan Pelatihan Kerja (LPPK) Prima Elite Institute',
+      url: 'http://lppkpei.com/',
     },
   ]);
 
