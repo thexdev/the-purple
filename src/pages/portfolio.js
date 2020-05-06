@@ -65,10 +65,12 @@ const Portfolio = () => {
             <Col xs={12} md={6}>
               <h2 className="text-danger">LPPKPEI</h2>
               <p className="lead">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates officiis, sed error accusantium impedit in cumque
-                commodi. Maiores non eaque inventore doloribus perspiciatis
-                quasi corporis esse veniam excepturi impedit. Earum?
+                Lembaga Pendidikan dan Pelatihan Kerja (LPPK) Prima Elite
+                Institute, memberikan beragam pilihan pelatihan program untuk
+                tenaga kesehatan Indonesia yang telah disesuaikan sesuai
+                kebutuhan dan permintaan pasar baik di dalam dan luar negeri
+                termasuk di dalam nya menyelenggarakan berbagai Seminar,
+                Pelatihan dan workshop di bidang kesehatan
               </p>
             </Col>
             <Col xs={12} md={6}>
